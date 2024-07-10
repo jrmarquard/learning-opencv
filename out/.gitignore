@@ -2,3 +2,6 @@
 *
 # Except this file
 !.gitignore
+# Except output I want to keep
+!keep/
+!keep/*
