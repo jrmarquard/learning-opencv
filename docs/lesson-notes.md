@@ -34,5 +34,21 @@ cv2.destroyAllWindows()
 Generated Image:
 ![Lesson 3 Output](./lesson3-screenshot.jpg)
 
+# lesson5.py
+
+```python
+
+img3gray = cv2.cvtColor(img3, cv2.COLOR_BGR2GRAY)
+ret, mask = cv2.threshold(img3gray, 230, 255, cv2.THRESH_BINARY_INV)
+
+mask_inv = cv2.bitwise_not(mask)                    # invert mask
+img1_bg = cv2.bitwise_and(roi, roi, mask=mask_inv)  # get bg of img1 where mask is _not_ set
+img3_fg = cv2.bitwise_and(img3, img3, mask=mask)    # get fg of img3 where mask _is_ set
+dst = cv2.add(img1_bg, img3_fg)                     # paste img3_fg on top of img1_bg
+img1[0:rows, 0:cols] = dst                          # overwrite img1 with result
+
+```
+
+![Lesson 5 Output](./lesson5-screenshot.jpg)
 
 
