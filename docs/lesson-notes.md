@@ -51,4 +51,12 @@ img1[0:rows, 0:cols] = dst                          # overwrite img1 with result
 
 ![Lesson 5 Output](./lesson5-screenshot.jpg)
 
+# Lesson 7
 
+Filtering hue (after converting to HSV) to mask everything except my hoodie + cup.
+
+![Lesson 7 - Filter 1](lesson7-1.jpg)
+
+Removed Light after clipping saturation.
+
+![Lesson 7 - Filter 2](lesson7-2.jpg)
