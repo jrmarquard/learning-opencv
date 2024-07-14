@@ -60,3 +60,9 @@ Filtering hue (after converting to HSV) to mask everything except my hoodie + cu
 Removed Light after clipping saturation.
 
 ![Lesson 7 - Filter 2](lesson7-2.jpg)
+
+# Lesson 10
+
+Various techniques used in edge detection. `edges` is CV2's built in.
+
+![Lesson 10](lesson10.jpg)
