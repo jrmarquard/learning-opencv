@@ -86,7 +86,11 @@ Result:
 
 # Lesson 15
 
-![Lesson 15](lesson15-demo.mov)
+![Lesson 15](lesson15-demo.gif)
 
-__forgive the 480 p__
+Screencap video converted with:
+```bash
+ffmpeg -i docs/lesson15-demo.mov -vf "fps=10,scale=720:-1:flags=lanczos" -loop 0 docs/lesson15-demo-3.gif
+```
+
 
