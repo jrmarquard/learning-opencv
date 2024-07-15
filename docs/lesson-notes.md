@@ -66,3 +66,27 @@ Removed Light after clipping saturation.
 Various techniques used in edge detection. `edges` is CV2's built in.
 
 ![Lesson 10](lesson10.jpg)
+
+# Lesson 14
+
+Sub-par object descriptors meant that the matches were poor : (
+
+Scene:
+
+![Lesson 14 Scene](../images/lesson14-pattern-matching-scene.jpg)
+
+Match:
+
+![Lesson 14 Match](../images/lesson14-pattern-matching-match.jpg)
+
+Result: 
+
+![Lesson 14 Result](lesson14-result.jpg)
+
+
+# Lesson 15
+
+![Lesson 15](lesson15-demo.mov)
+
+__forgive the 480 p__
+
