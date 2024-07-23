@@ -94,3 +94,47 @@ ffmpeg -i docs/lesson15-demo.mov -vf "fps=10,scale=720:-1:flags=lanczos" -loop 0
 ```
 
 
+# Lesson 17 - Create Haar Cascade
+
+1. Collect **negative** images
+Any images will do as long as the image is not in them. Will need 3000+ ideally.
+
+2. Collect **positive** images
+Thousands of images of your own image. 
+```shell
+opencv_createsamples -img lesson15-measuring_tape_50x50.jpg  -bg bg.txt -info info/info.lst -pngoutput info -maxxangle 0.5 -maxyangle 0.5 -maxzangle 0.5 -num 1950
+```
+
+Finding a measuring tape:
+
+![Measuring Tape](../src/lesson17/lesson15-measuring_tape_50x50.jpg)
+
+3. Create a positive vector file
+Done by stitching together all positives. OpenCV does the heavy lifting: 
+```shell
+opencv_createsamples -info info/info.lst -num 1950 -w 20 -h 20 -vec positives.vec
+```
+
+4. Train cascade.
+OpenCV command: 
+```shell
+opencv_traincascade -data data -vec positives.vec -bg bg.txt -numPos 1800 -numNeg 900 -numStages 10 -w 20 -h 20
+```
+
+Notes:
+- want negative images larger than positive images if you are synthesizing samples (rather than collecting and labeling)
+- use small images (100x100 for neg, 50x50 for pos)
+- aim to have double the number of positive images for training
+
+Using: 
+- Using [Image Net](https://www.image-net.org/) to get images
+
+
+__**NOTE**__
+Skipping 17-21 until I can find an alterantive to ImageNet
+as it's only available to educational institutions now : (
+
+Other Notes:
+- increasing size of training data will quickly increase memory demand
+- the cascade will only find images of the same size of training data
+- will find a fun home project to actual try this on rather than just going through the motions
